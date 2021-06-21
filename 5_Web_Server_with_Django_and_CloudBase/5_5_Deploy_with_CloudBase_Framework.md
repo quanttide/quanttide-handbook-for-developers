@@ -37,3 +37,4 @@ cloudbase framework deploy --mode dev
 - 资源环境统一在上海。
 - 预生产环境和生产环境以不同一个或多个的云开发环境管理。
 - 静态网站托管不支持多域名前，采取增加多对云开发环境的方案，或者使用一级域名暂时使用。
+- 如果有必要防止不必要的改动，请参考Coding为代码仓库提供的文件锁定功能，详见：https://help.coding.net/docs/host/git/lock.html。
