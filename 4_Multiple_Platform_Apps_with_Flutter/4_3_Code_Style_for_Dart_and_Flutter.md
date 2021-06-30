@@ -1,5 +1,10 @@
 # Dart和Flutter项目代码规范
 
+## 项目结构
+
+https://book.flutterchina.club/chapter15/code_structure.html
+
+
 ## 组件嵌套顺序
 
 （TODO）初步思路：
