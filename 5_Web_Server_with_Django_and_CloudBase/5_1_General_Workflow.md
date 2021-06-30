@@ -1,4 +1,4 @@
-# Django项目
+# Django工程规范
 
 ## 创建Django项目和应用
 
@@ -11,7 +11,24 @@
 - 修改默认为项目名称的`cloudbaserc.json`的`serverPath`变量，建议去掉项目命名中的`qt`，比如`users`，以增强API对外可读性。
 
 
-## 本地调试
+## PyCharm的工具箱
+
+- 设置manage.py路径和使用manage.py命令行工具。
+- 设置settings.py路径。
+- 使用Django Tests和DEBUG功能调试。
+- 使用可运行Django的Python Console调试用例。
+
+
+## 部署前本地调试
+
+建议开发者遵循以下顺序调试：
+1. 本地运行Django服务，检验Django服务是否正常运行。
+2. 本地运行Docker打包镜像，检验Django服务容器化是否正常。
+3. 本地运行CloudBase Framework部署，检验持续部署流程是否正常。
+
+### 本地运行Django服务
+
+略。
 
 ### 本地Docker容器打包调试
 
@@ -20,3 +37,8 @@ Dockerfile运行gunicorn服务的时候注意：
 exec gunicorn <project-name>.wsgi:application --bind 0.0.0.0:8000
 ```
 注意改成本Django项目的名称。
+
+
+### 本地运行CloudBase Framework
+
+详见[CloudBase Framework部署](./5_6_2_Deploy_with_CloudBase_Framework.md)
