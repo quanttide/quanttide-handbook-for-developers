@@ -125,10 +125,4 @@ Serverless Framework识别`serverless.yml`的方式是，用项目根目录中�
 
 ## Git配置
 
-`.gitignore`文件应当设置：
-- 环境变量：`.env`（最好加`*.env`和`.env.*`）
-- IDE配置：`.vscode`、`.idea`。
-- Python相关
-- 其他必要文件
-
-[//]: #(如果需再补充)
+`.gitignore`文件配置参考[.gitignore文件规范](../2_General_Principles_for_DevOps/2_2_z_gitignore.md)

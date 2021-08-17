@@ -1,11 +1,11 @@
 ---
-title: 代码项目框架
+title: 基本框架
 author: 张果
 created_date: 2021-08-16
 updated_date: 2021-08-16
 ---
 
-# 代码项目框架
+# 基本框架
 
 ## 文件结构
 
@@ -64,3 +64,8 @@ README文件按照标准README规范即可。必须有的内容包括：
 `.env`文件（也可以是`*.env`或`.env.*`），此格式为云原生项目的标准。
 
 环境变量在本地项目配置并加入`.gitignore`，在云端通过构建计划的环境变量传入。
+
+
+## Git配置
+
+`.gitignore`文件配置参考[.gitignore文件规范](../2_General_Principles_for_DevOps/2_2_z_gitignore.md)
