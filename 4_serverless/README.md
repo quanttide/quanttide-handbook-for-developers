@@ -1,1 +1,1 @@
-# Serverless项目
+# Serverless项目规范
