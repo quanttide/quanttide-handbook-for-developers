@@ -7,6 +7,7 @@ GitHub Flow主要用于语言和框架依赖库或无需多套云资源（环境
 ## GitHub Flow
 
 GitHub Flow要求只有一个`master`长期分支，其他的短期分支都是feature分支，核心机制是通过PR机制把feature分支的代码提交到`master`分支。完整的流程为：
+
 1. 创建一个新feature分支。
 2. 在此feature分支上提交（commit）修改。
 3. 创建一个合并请求（pull request）。
@@ -19,7 +20,6 @@ GitHub Flow要求只有一个`master`长期分支，其他的短期分支都是f
 
 开发者在本地应当熟练使用fetch和pull拉取云端`master`分支到本地`master`分支。在本地保持跟踪云端的分支命名和云端一致。准备push到云端的feature分支在本地可以通过compare diff等方式确保可提交到云端`master`分支（而不是本地`master`分支）。其他建议实践根据开发者实践再进行进一步总结。
 
-
 ## 从GitHub Flow升级到GitLab Flow
 
 GitLab Flow官方文档对于GitHub Flow的缺点阐述如下：
@@ -31,23 +31,28 @@ GitLab Flow官方文档对于GitHub Flow的缺点阐述如下：
 > operations team is at full capacity - but you also merge code at other times.
 
 在我们内部，最常见的需求是隔离：
+
 - 开发者在开发调试过程中使用的开发环境资源
 - 测试或上线的预生产或生产资源。
 
 常见的场景是：
+
 - 自建应用，主要是部署在腾讯云云开发产品线的量潮应用系统的各个应用。
 - 函数计算应用，主要是部署在腾讯云Serverless产品线的数据服务业务的大数据类项目。
 
 从GitHub Flow升级到GitLab Flow的主要步骤如下：
+
 1. 增加两个长期分支，预生产分支`pre-production`和生产分支`production`，他们在GitLab Flow被称为环境分支。主分支`master`、预生产分支`pre-production`、生产分支`production`分别对应云计算资源的开发环境、预生产环境（测试环境）、生产环境。
 2. 改变版本发布策略。（PS：还需要进一步研究。）
 
 云计算资源主要通过命名区分，具体规则如下：
+
 - 在云开发的“环境”中，我们通常以`<system_name>-<env>`命名，其中`<env>`可选开发环境`dev`（比如`qtapps-dev`）、预生产/测试环境`testing`、生产环境`production`。在代码中，使用`ENV`环境变量，可选开发环境`dev`、预生产环境`pre-prod`、生产环境`prod`。
 - 在函数计算项目中，遵循Serverless Framework文档提供的规范，使用`STAGE`环境变量，可选开发环境`dev`、预生产/测试环境`testing`、生产环境`master`。（PS：使用master命名生产环境比较容易迷惑，在其他地方我们尽可能不适用。）
 
 同类框架命名一定要有统一的规则，所有开发者一定要**遵循共同的内部命名规范**，以方便开发者理解和后续被代码识别。
 
 官方文档提供了一些指导：
+
 - Serverless Framework建议的开发和发布流程如下：https://cloud.tencent.com/document/product/1154/47288。
 - CloudBase文档没有类似流程，只有云原生应用标准。可以参考容器应用基于12-factors原则的实践资料。
